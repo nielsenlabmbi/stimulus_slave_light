@@ -1,0 +1,1 @@
+stimulus_slave_light
