@@ -1,0 +1,6 @@
+setupID: EP
+masterIP: 172.30.11.140
+defaultMonitor: Linear
+monitorList: monitorList
+logRoot: /home/nielsenlab/log_files/
+useMCDaq: 1
