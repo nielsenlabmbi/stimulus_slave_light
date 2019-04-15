@@ -8,7 +8,6 @@ global Gtxtr  Masktxtr   %'play' will use these
 
 %clean up
 if ~isempty(Gtxtr)
-    disp(Gtxtr)
     Screen('Close',Gtxtr);  %First clean up: Get rid of all textures/offscreen windows
 end
 

@@ -29,9 +29,6 @@ Pstate.param{15} = {'noise_width'    'float'       10       0                'de
 Pstate.param{16} = {'x_zoom'    'int'       1       0                ''};
 Pstate.param{17} = {'y_zoom'    'int'       1       0                ''};
 
-Pstate.param{18} = {'Leye_bit'    'int'   1       0                ''};
-Pstate.param{19} = {'Reye_bit'    'int'   1       0                ''};
-Pstate.param{20} = {'use_ch3'    'int'   0       0                'binary'};
 
 
 

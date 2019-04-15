@@ -90,21 +90,9 @@ for i = 1:Nstimframes
     Screen(screenPTR, 'Flip');
     
     %generate event
-    if ~isempty(daq)
-        if P.use_ch3==1   %indicate cycles using the 3rd channel
-            if mod(i-1,P.t_period)==0 && loopTrial ~= -1
-                digWord = 7;  %toggle 2nd and 3rd bit high to signal stim on
-                DaqDOut(daq, 0, digWord);
-            elseif mod(i-1,P.t_period)==10 && loopTrial ~=-1
-                digWord=3;
-                DaqDOut(daq, 0, digWord);
-            end
-        else %just signal stimulus on/off
-            if i==1 && loopTrial ~= -1
-                digWord=3;
-                DaqDOut(daq, 0, digWord);
-            end
-        end
+    if ~isempty(daq) && i==1 && loopTrial ~= -1
+        digWord=3;
+        DaqDOut(daq, 0, digWord);
     end
     
 end

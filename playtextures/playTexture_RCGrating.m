@@ -46,13 +46,14 @@ Screen('DrawTexture', screenPTR, Stxtr(2),syncSrc,syncDst);
 Screen(screenPTR, 'Flip');
 
 %Wake up the daq to improve timing later
-DaqDOut(daq, 0, 0); 
-
+if ~isempty(daq) 
+    DaqDOut(daq, 0, 0);
+end
 
 %%%Play predelay %%%%
 Screen('DrawTexture', screenPTR, Stxtr(1),syncSrc,syncDst);
 Screen(screenPTR, 'Flip');
-if loopTrial ~= -1
+if loopTrial ~= -1 && ~isempty(daq) 
     digWord = 1;  %Make 1st bit high
     DaqDOut(daq, 0, digWord);
 end
@@ -113,11 +114,11 @@ for i = 1:N_Im
         Screen(screenPTR, 'Flip');
         
         %generate event 
-        if j==1 && loopTrial ~= -1
+        if j==1 && loopTrial ~= -1 && ~isempty(daq) 
             digWord = 7;  %toggle 2nd bit high to signal stim on
             DaqDOut(daq, 0, digWord);
         end
-        if j==floor(P.h_per/2) && loopTrial ~= -1
+        if j==floor(P.h_per/2) && loopTrial ~= -1 && ~isempty(daq) 
             digWord = 3;  %reset 2nd bit to low
             DaqDOut(daq, 0, digWord);
         end
@@ -132,7 +133,7 @@ for i = 1:Npostframes-1
     Screen('DrawTexture', screenPTR, Stxtr(2),syncSrc,syncDst);
     Screen(screenPTR, 'Flip');
     %generate event to signal end of stimulus presentation
-    if i==1 && loopTrial ~= -1
+    if i==1 && loopTrial ~= -1 && ~isempty(daq) 
         digWord = 1;  %toggle 2nd bit to signal stim on
         DaqDOut(daq, 0, digWord);
     end
@@ -141,7 +142,7 @@ Screen('DrawTexture', screenPTR, Stxtr(1),syncSrc,syncDst);
 Screen(screenPTR, 'Flip');
 
 
-if loopTrial ~= -1
+if loopTrial ~= -1 && ~isempty(daq) 
     DaqDOut(daq, 0, 0);  %Make sure 3rd bit finishes low
 end
 

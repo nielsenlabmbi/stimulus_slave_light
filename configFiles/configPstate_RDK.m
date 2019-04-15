@@ -28,7 +28,6 @@ Pstate.param{16} = {'dotLifetime'      'int'     0       1                'frame
 Pstate.param{17} = {'dotCoherence'      'int'     100       1                '%'};
 Pstate.param{18} = {'noNetNoise'      'int'     0      1            ''};
 
-
 Pstate.param{19} = {'motionopp_bit'    'int'     0       0                'binary'};
 Pstate.param{20} = {'surround_bit'    'int'     0       0                'binary'};
 
@@ -47,8 +46,7 @@ Pstate.param{30} = {'redgun' 'float'   1       0             ''};
 Pstate.param{31} = {'greengun' 'float'   1       0             ''};
 Pstate.param{32} = {'bluegun' 'float'   1       0             ''};
 
-Pstate.param{33} = {'Leye_bit'    'int'   1       0                ''};
-Pstate.param{34} = {'Reye_bit'    'int'   1       0                ''};
+
 
 
 
